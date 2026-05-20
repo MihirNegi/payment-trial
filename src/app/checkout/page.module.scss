@@ -1,0 +1,378 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.page {
+  @include container;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.empty {
+  @include flex-center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 80px 0;
+  text-align: center;
+
+  h2 { font-size: 1.5rem; }
+  p { color: $dark-light; }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section {
+  @include card;
+  padding: 28px;
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+.fieldRow {
+  display: flex;
+  gap: 16px;
+
+  @include respond-to(sm) {
+    flex-direction: column;
+  }
+}
+
+.field {
+  flex: 1;
+  margin-bottom: 16px;
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $dark-light;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid $gray-light;
+    border-radius: $radius-md;
+    font-size: 0.95rem;
+    transition: $transition;
+    background: $white;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.12);
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba($danger, 0.08);
+  border: 1px solid rgba($danger, 0.2);
+  border-radius: $radius-md;
+  color: $danger;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.methodList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.methodOption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 2px solid $gray-light;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+    background: rgba($primary, 0.02);
+  }
+}
+
+.methodSelected {
+  border-color: $primary;
+  background: rgba($primary, 0.04);
+  box-shadow: 0 0 0 3px rgba($primary, 0.1);
+}
+
+.methodRadio {
+  accent-color: $primary;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.methodIcon {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  background: $light;
+  color: $primary;
+  flex-shrink: 0;
+}
+
+.methodInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.methodLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $dark;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.methodBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba($success, 0.12);
+  color: $success;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.methodDesc {
+  font-size: 0.82rem;
+  color: $dark-light;
+}
+
+.methodFee {
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.feeFree {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: $success;
+  background: rgba($success, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.feeAmount {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $dark-light;
+}
+
+.paymentForm {
+  margin-top: 16px;
+  padding: 20px;
+  background: $light;
+  border-radius: $radius-md;
+  border: 1px solid $gray-light;
+}
+
+.bankGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bankOption {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1.5px solid $gray-light;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: $dark;
+  transition: $transition;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+    background: rgba($primary, 0.02);
+  }
+}
+
+.bankSelected {
+  border-color: $primary;
+  background: rgba($primary, 0.06);
+  font-weight: 600;
+}
+
+.walletNote {
+  font-size: 0.88rem;
+  color: $dark-light;
+  line-height: 1.5;
+}
+
+.feeNote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba($success, 0.06);
+  border: 1px solid rgba($success, 0.15);
+  border-radius: $radius-sm;
+  font-size: 0.78rem;
+  color: $dark-light;
+}
+
+.feeRow {
+  color: $warning;
+  font-weight: 500;
+}
+
+.feeRowFree {
+  font-weight: 500;
+}
+
+.sidebar {
+  position: sticky;
+  top: 88px;
+}
+
+.orderReview {
+  @include card;
+  padding: 28px;
+  margin-bottom: 16px;
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+.reviewItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $gray-light;
+}
+
+.reviewItem {
+  @include flex-between;
+  font-size: 0.9rem;
+}
+
+.reviewName {
+  color: $dark;
+  font-weight: 500;
+}
+
+.reviewQty {
+  color: $dark-light;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.reviewTotals {
+  padding-top: 12px;
+}
+
+.reviewRow {
+  @include flex-between;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: $dark-light;
+
+  &.grandTotal {
+    border-top: 2px solid $dark;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: $dark;
+  }
+}
+
+.free {
+  color: $success;
+  font-weight: 600;
+}
+
+.payBtn {
+  @include button-primary;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.05rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba($white, 0.3);
+  border-top-color: $white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.secureNote {
+  @include flex-center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: $dark-light;
+  font-weight: 500;
+}

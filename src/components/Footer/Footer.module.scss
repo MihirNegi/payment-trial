@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  margin-top: auto;
+  background: $dark;
+  color: $gray;
+  padding: 40px 0;
+}
+
+.container {
+  @include container;
+  @include flex-between;
+  gap: 24px;
+
+  @include respond-to(md) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.logo {
+  color: $white;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.tagline {
+  font-size: 0.85rem;
+}
+
+.info {
+  text-align: right;
+  font-size: 0.85rem;
+  line-height: 1.8;
+
+  @include respond-to(md) {
+    text-align: center;
+  }
+}

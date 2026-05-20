@@ -1,0 +1,109 @@
+@use 'sass:color';
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.page {
+  @include container;
+  @include flex-center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.card {
+  @include card;
+  max-width: 520px;
+  width: 100%;
+  padding: 48px 40px;
+  text-align: center;
+
+  @include respond-to(sm) {
+    padding: 32px 20px;
+  }
+}
+
+.checkmark {
+  color: $success;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: $dark;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: $dark-light;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.details {
+  text-align: left;
+  background: $light;
+  border-radius: $radius-md;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.detailRow {
+  @include flex-between;
+  padding: 10px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+.label {
+  font-size: 0.88rem;
+  color: $dark-light;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: $dark;
+  font-family: $font-mono;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba($warning, 0.2);
+  color: color.adjust($warning, $lightness: -25%);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+.successBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba($success, 0.15);
+  color: $success;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+.infoBox {
+  background: linear-gradient(135deg, rgba($primary, 0.05), rgba($secondary, 0.05));
+  border: 1px solid rgba($primary, 0.1);
+  border-radius: $radius-md;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+
+  p {
+    font-size: 0.88rem;
+    color: $dark-light;
+    line-height: 1.6;
+  }
+}
+
+.backBtn {
+  @include button-primary;
+  padding: 14px 32px;
+}

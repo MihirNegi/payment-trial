@@ -1,0 +1,73 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($white, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $gray-light;
+}
+
+.container {
+  @include container;
+  @include flex-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: $primary;
+  letter-spacing: -0.5px;
+}
+
+.logoIcon {
+  font-size: 1.2rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.link {
+  font-weight: 500;
+  color: $dark-light;
+  transition: $transition;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.cartLink {
+  position: relative;
+  @include flex-center;
+  color: $dark;
+  transition: $transition;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  @include flex-center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: $accent;
+  color: $white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 10px;
+}

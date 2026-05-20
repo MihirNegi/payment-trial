@@ -1,0 +1,35 @@
+$primary: #6c5ce7;
+$primary-dark: #5a4bd1;
+$primary-light: #a29bfe;
+$secondary: #00cec9;
+$secondary-dark: #00b5b0;
+$accent: #fd79a8;
+$dark: #2d3436;
+$dark-light: #636e72;
+$gray: #b2bec3;
+$gray-light: #dfe6e9;
+$light: #f5f6fa;
+$white: #ffffff;
+$success: #00b894;
+$warning: #fdcb6e;
+$danger: #e17055;
+
+$font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-mono: var(--font-geist-mono), monospace;
+
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+$shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.15);
+
+$transition: all 0.2s ease;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
